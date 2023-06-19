@@ -1,4 +1,4 @@
-require("dotenv").config();
+// require("dotenv").config();
 
 const express = require("express");
 var cors = require('cors')
@@ -48,10 +48,10 @@ app.use("/api/workouts", workoutRoutes);
 
 // connect to db
 mongoose
-  .connect(process.env.MONGO_URI)
+  .connect('mongodb+srv://harry:harry@mernapp.hx8p8xf.mongodb.net/?retryWrites=true&w=majority')
   .then(() => {
     // listen for request
-    app.listen(process.env.PORT, () => {
+    app.listen(3001, () => {
       console.log("connected to db & server on 3001");
     });
   })
